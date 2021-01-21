@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sres.Net.EEIP;
+//using Sres.Net.EEIP;
 
 namespace Fanuc_R30iA_Implicit
 {
@@ -11,7 +11,7 @@ namespace Fanuc_R30iA_Implicit
     {
         static void Main(string[] args)
         {
-            EEIPClient eeipClient = new EEIPClient();
+         /*   EEIPClient eeipClient = new EEIPClient();
             eeipClient.IPAddress = "192.168.1.254";
             //A Session has to be registered before any communication can be established
             eeipClient.RegisterSession();
@@ -49,7 +49,7 @@ namespace Fanuc_R30iA_Implicit
                 //eeipClient.O_T_IOData[2] = 0x0F;        //Set all Four digital Inputs to High
 
                 System.Threading.Thread.Sleep(500);
-            }
+            }*/
         }
     }
 }

@@ -22,29 +22,29 @@ namespace AllenBradleyPointIO
         {
             EEIPClient eeipClient = new EEIPClient();
             //Ip-Address of the Ethernet-IP Device (In this case Allen-Bradley 1734-AENT Point I/O)
-            eeipClient.IPAddress = "192.168.178.107";
+            eeipClient.IPAddress = "150.150.10.151";
             //A Session has to be registered before any communication can be established
             eeipClient.RegisterSession();
-
-            //Parameters from Originator -> Target
-            eeipClient.O_T_InstanceID = 0x64;              //Instance ID of the Output Assembly
-            eeipClient.O_T_Length = 4;                     //The Method "Detect_O_T_Length" detect the Length using an UCMM Message
+            //101=65; 102=66
+            //Parameters from Originator -> Target //This program/stack TO plc
+            eeipClient.O_T_InstanceID = 0x66;              //Instance ID of the Output Assembly
+            eeipClient.O_T_Length = 505;                     //The Method "Detect_O_T_Length" detect the Length using an UCMM Message
             eeipClient.O_T_RealTimeFormat = Sres.Net.EEIP.RealTimeFormat.Header32Bit;   //Header Format
             eeipClient.O_T_OwnerRedundant = false;
             eeipClient.O_T_Priority = Sres.Net.EEIP.Priority.Scheduled;
             eeipClient.O_T_VariableLength = false;
             eeipClient.O_T_ConnectionType = Sres.Net.EEIP.ConnectionType.Point_to_Point;
-            eeipClient.RequestedPacketRate_O_T = 500000;        //500ms is the Standard value
+            eeipClient.RequestedPacketRate_O_T = 40000;        //40ms is the Standard value
 
-            //Parameters from Target -> Originator
+            //Parameters from Target -> Originator //PLC or other TO HERE
             eeipClient.T_O_InstanceID = 0x65;
-            eeipClient.T_O_Length = 16;
-            eeipClient.T_O_RealTimeFormat = Sres.Net.EEIP.RealTimeFormat.Modeless;
+            eeipClient.T_O_Length = 505;
+            eeipClient.T_O_RealTimeFormat = Sres.Net.EEIP.RealTimeFormat.Modeless;//mODELESS;
             eeipClient.T_O_OwnerRedundant = false;
             eeipClient.T_O_Priority = Sres.Net.EEIP.Priority.Scheduled;
             eeipClient.T_O_VariableLength = false;
             eeipClient.T_O_ConnectionType = Sres.Net.EEIP.ConnectionType.Multicast;
-            eeipClient.RequestedPacketRate_T_O = 500000;    //RPI in  500ms is the Standard value
+            eeipClient.RequestedPacketRate_T_O = 40000;    //RPI in  40ms is the Standard value
 
             //Forward open initiates the Implicit Messaging
             eeipClient.ForwardOpen();

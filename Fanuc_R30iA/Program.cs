@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sres.Net.EEIP;
+//using Sres.Net.EEIP;
 
 namespace Fanuc_R30iA
 {
@@ -12,7 +12,7 @@ namespace Fanuc_R30iA
         static void Main(string[] args)
         {
             //https://www.youtube.com/watch?v=fg58H-ZZit0
-            EEIPClient eeipClient = new EEIPClient();
+            /*EEIPClient eeipClient = new EEIPClient();
 
             eeipClient.RegisterSession("192.168.1.3");
 
@@ -23,7 +23,7 @@ namespace Fanuc_R30iA
 
             //When done, we unregister the session
             eeipClient.UnRegisterSession();
-            Console.ReadKey();
+            Console.ReadKey();*/
         }
     }
 }

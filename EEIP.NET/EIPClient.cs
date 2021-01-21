@@ -34,15 +34,15 @@ namespace Sres.Net.EEIP
         /// IPAddress of the Ethernet/IP Device
         /// </summary>
         /// 
-        public string IPAddress { get; set; } = "172.0.0.1";
+        public string IPAddress { get; set; } = "150.150.10.11";
         /// <summary>
         /// Requested Packet Rate (RPI) in Microseconds Originator -> Target for Implicit-Messaging (Default 0x7A120 -> 500ms)
         /// </summary>
-        public UInt32 RequestedPacketRate_O_T { get; set; } = 0x7A120;      //500ms
+        public UInt32 RequestedPacketRate_O_T { get; set; } = 0x9C40;      //40ms
         /// <summary>
         /// Requested Packet Rate (RPI) in Microseconds Target -> Originator for Implicit-Messaging (Default 0x7A120 -> 500ms)
         /// </summary>
-        public UInt32 RequestedPacketRate_T_O { get; set; } = 0x7A120;      //500ms
+        public UInt32 RequestedPacketRate_T_O { get; set; } = 0x9C40;      //40ms
         /// <summary>
         /// "1" Indicates that multiple connections are allowed Originator -> Target for Implicit-Messaging (Default: TRUE) 
         /// </summary>
@@ -92,7 +92,7 @@ namespace Sres.Net.EEIP
         /// <summary>
         /// Class Assembly (Consuming IO-Path - Outputs) Originator -> Target for Implicit Messaging (Default: 0x64)
         /// </summary>
-        public byte O_T_InstanceID { get; set; } = 0x64;               //Ausgänge
+        public byte O_T_InstanceID { get; set; } = 0X66;//0x64;               //Ausgänge
         /// <summary>
         /// Class Assembly (Producing IO-Path - Inputs) Target -> Originator for Implicit Messaging (Default: 0x64)
         /// </summary>
@@ -100,11 +100,11 @@ namespace Sres.Net.EEIP
         /// <summary>
         /// Provides Access to the Class 1 Real-Time IO-Data Originator -> Target for Implicit Messaging    
         /// </summary>
-        public byte[] O_T_IOData = new byte[505];   //Class 1 Real-Time IO-Data O->T   
+        public byte[] O_T_IOData = new byte[505];//new byte[505];   //Class 1 Real-Time IO-Data O->T   
         /// <summary>
         /// Provides Access to the Class 1 Real-Time IO-Data Target -> Originator for Implicit Messaging
         /// </summary>
-        public byte[] T_O_IOData = new byte[505];    //Class 1 Real-Time IO-Data T->O  
+        public byte[] T_O_IOData = new byte[505]; //new byte[505];    //Class 1 Real-Time IO-Data T->O  
         /// <summary>
         /// Used Real-Time Format Originator -> Target for Implicit Messaging (Default: RealTimeFormat.Header32Bit)
         /// Possible Values: RealTimeFormat.Header32Bit; RealTimeFormat.Heartbeat; RealTimeFormat.ZeroLength; RealTimeFormat.Modeless

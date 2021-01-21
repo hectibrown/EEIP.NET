@@ -15,7 +15,7 @@ namespace ConsoleApplication1
 
             //UInt32 sessionHandle = eipClient.RegisterSession("192.168.178.66", 0xAF12);
 
-            UInt32 sessionHandle =  eipClient.RegisterSession("192.168.178.107", 0xAF12);
+            UInt32 sessionHandle =  eipClient.RegisterSession("150.150.10.151", 0xAF12);
             //            eipClient.O_T_ConnectionType = Sres.Net.EEIP.ConnectionType.Null;
             //            eipClient.O_T_Length = 0;
            
